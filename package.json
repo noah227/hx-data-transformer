@@ -1,0 +1,105 @@
+{
+	"id": "noahyoung-hx-data-transformer",
+	"name": "一键变换",
+	"description": "数据变变变",
+	"displayName": "一键花式变换，详见说明",
+	"version": "0.0.0",
+	"publisher": "your name",
+	"engines": {
+		"HBuilderX": "^2.7.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"main": "./extension",
+	"scripts": {
+		"build:transformer": "rollup -c rollup.config.js"
+	},
+	"keywords": ["风格", "驼峰", "二维码"],
+	"activationEvents": [
+		"onCommand:extension.toObject",
+		"onCommand:extension.toArray",
+		"onCommand:extension.changeCase",
+		"onCommand:extension.toQrCode",
+		"onCommand:extension.configuration"
+	],
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.toObject",
+				"title": "变对象"
+			},
+			{
+				"command": "extension.toArray",
+				"title": "变数组"
+			},
+			{
+				"command": "extension.changeCase",
+				"title": "变风格"
+			},
+			{
+				"command": "extension.toQrCode",
+				"title": "变二维码"
+			},
+			{
+				"command": "extension.configuration",
+				"title": "配置项"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"id": "transformer",
+					"title": "一键变换",
+					"group": "assist"
+				},
+				{
+					"command": "extension.toObject",
+					"group": "transformer@1",
+					"when": "editorTextFocus"
+				},
+				{
+					"command": "extension.toArray",
+					"group": "transformer@2",
+					"when": "editorTextFocus"
+				},
+				{
+					"command": "extension.changeCase",
+					"group": "transformer@3",
+					"when": "editorTextFocus"
+				},
+				{
+					"command": "extension.toQrCode",
+					"group": "transformer@4",
+					"when": "editorTextFocus"
+				},
+				{
+					"command": "extension.configuration",
+					"group": "transformer@5",
+					"when": "editorTextFocus"
+				},
+				{
+					"group": "z_commands"
+				}
+			]
+		}
+	},
+	"extensionDependencies": [
+		"plugin-manager"
+	],
+	"dependencies": {
+		"change-case": "^4.1.2",
+		"copy-paste": "^1.5.3",
+		"qrcode": "^1.5.3"
+	},
+	"devDependencies": {
+		"@rollup/plugin-commonjs": "^24.1.0",
+		"@rollup/plugin-node-resolve": "^15.0.2",
+		"@rollup/plugin-terser": "^0.4.3",
+		"@rollup/plugin-typescript": "^11.1.0",
+		"@types/node": "^20.3.3",
+		"rollup": "^3.23.0",
+		"tslib": "^2.5.2",
+		"typescript": "^5.0.4"
+	}
+}
