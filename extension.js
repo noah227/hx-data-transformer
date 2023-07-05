@@ -1,11 +1,10 @@
 var hx = require("hbuilderx");
-const transformer = require("./src/main.js")
+// const transformer = require("./src/main.js")
+const transformer = require("./src/main.build.js")
 
 // [commandId, handler]
 const commandList = [
-	["extension.transformer", () => {
-		console.log(123)
-	}],
+	// ["extension.transformer", () => {}],
 	["extension.toObject", () => transformer.toObject()],
 	["extension.toArray", () => transformer.toArray()],
 	["extension.changeCase", () => transformer.changeCase()],
@@ -14,7 +13,7 @@ const commandList = [
 		hx.window.showMessageBox({
 			title: "提示",
 			type: "info",
-			text: "敬请期待！"
+			text: "暂未开放，敬请期待！"
 		})
 	}],
 ]

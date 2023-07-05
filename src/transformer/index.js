@@ -220,7 +220,6 @@ const _toArray = (s) => {
  * （请选中一个对象）大驼峰/小驼峰/...
  */
 const _changeCase = (ccFnKey, text) => {
-    console.log([text]);
     const COMMENT_IGNORE_KEY = "@@@@@@";
     // 注释段临时处理
     const ignoreCommentList = [];

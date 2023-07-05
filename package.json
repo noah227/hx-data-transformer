@@ -3,19 +3,26 @@
 	"name": "一键变换",
 	"description": "数据变变变",
 	"displayName": "一键花式变换，详见说明",
-	"version": "0.0.0",
-	"publisher": "your name",
+	"version": "0.0.1",
+	"publisher": "Noah Young",
 	"engines": {
-		"HBuilderX": "^2.7.0"
+		"HBuilderX": "^3.2.22"
 	},
 	"categories": [
 		"Other"
 	],
 	"main": "./extension",
 	"scripts": {
-		"build:transformer": "rollup -c rollup.config.js"
+		"build:transformer": "rollup -c rollup.config.transformer.js",
+		"build:main": "rollup -c rollup.config.main.js",
+		"build": "npm run build:transformer && npm run build:main",
+		"pack": "node hx-pack.js"
 	},
-	"keywords": ["风格", "驼峰", "二维码"],
+	"keywords": [
+		"风格",
+		"驼峰",
+		"二维码"
+	],
 	"activationEvents": [
 		"onCommand:extension.toObject",
 		"onCommand:extension.toArray",
@@ -56,22 +63,22 @@
 				{
 					"command": "extension.toObject",
 					"group": "transformer@1",
-					"when": "editorTextFocus"
+					"when": "editorHasSelection"
 				},
 				{
 					"command": "extension.toArray",
 					"group": "transformer@2",
-					"when": "editorTextFocus"
+					"when": "editorHasSelection"
 				},
 				{
 					"command": "extension.changeCase",
 					"group": "transformer@3",
-					"when": "editorTextFocus"
+					"when": "editorHasSelection"
 				},
 				{
 					"command": "extension.toQrCode",
 					"group": "transformer@4",
-					"when": "editorTextFocus"
+					"when": "editorHasSelection"
 				},
 				{
 					"command": "extension.configuration",
@@ -88,6 +95,7 @@
 		"plugin-manager"
 	],
 	"dependencies": {
+		"@rollup/plugin-json": "^6.0.0",
 		"change-case": "^4.1.2",
 		"copy-paste": "^1.5.3",
 		"qrcode": "^1.5.3"
@@ -98,6 +106,7 @@
 		"@rollup/plugin-terser": "^0.4.3",
 		"@rollup/plugin-typescript": "^11.1.0",
 		"@types/node": "^20.3.3",
+		"fs-extra": "^11.1.1",
 		"rollup": "^3.23.0",
 		"tslib": "^2.5.2",
 		"typescript": "^5.0.4"

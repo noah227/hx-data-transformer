@@ -3,6 +3,8 @@ node_modules
 dist
 *.zip
 
+main.build.js
+
 # Log files
 npm-debug.log*
 yarn-debug.log*
