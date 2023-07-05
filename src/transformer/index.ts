@@ -34,7 +34,7 @@ const _changeCase = (ccFnKey: string, text: string) => {
     const COMMENT_IGNORE_KEY = "@@@@@@"
     // 注释段临时处理
     const ignoreCommentList: string[] = []
-    text = _matchReplace(text, /\s*\/\/.*(\r?\n)/g, (m) => {
+    text = _matchReplace(text, /\s*\/\/.*(\r?\n)?/g, (m) => {
         ignoreCommentList.push(m[0])
         return [COMMENT_IGNORE_KEY, 0]
     })
