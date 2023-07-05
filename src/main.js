@@ -51,7 +51,8 @@ module.exports = {
             transformer.toQrCode(text).then(url => {
                 require("copy-paste").copy(url)
                 hx.window.setStatusBarMessage("已复制二维码地址复制到剪切板", 3000)
-                // require("child_process").execSync(`@start chrome ${url}`)
+            }).catch(e => {
+                hx.window.setStatusBarMessage("文本过长，转换二维码失败", 3000, "error")
             })
         })
     }
