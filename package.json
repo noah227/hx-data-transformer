@@ -27,6 +27,7 @@
 		"onCommand:extension.toObject",
 		"onCommand:extension.toArray",
 		"onCommand:extension.changeCase",
+		"onCommand:extension.changeCaseAnyway",
 		"onCommand:extension.toQrCode",
 		"onCommand:extension.configuration"
 	],
@@ -43,6 +44,10 @@
 			{
 				"command": "extension.changeCase",
 				"title": "变风格"
+			},
+			{
+				"command": "extension.changeCaseAnyway",
+				"title": "变风格（任意变换）"
 			},
 			{
 				"command": "extension.toQrCode",
@@ -72,6 +77,11 @@
 				},
 				{
 					"command": "extension.changeCase",
+					"group": "transformer@3",
+					"when": "editorHasSelection"
+				},
+				{
+					"command": "extension.changeCaseAnyway",
 					"group": "transformer@3",
 					"when": "editorHasSelection"
 				},

@@ -57,6 +57,19 @@ const _changeCase = (ccFnKey: string, text: string) => {
     return text
 }
 
+/**
+ * （请选中一个对象）大驼峰/小驼峰/...
+ * 只要匹配到符合变量命名法的都进行转换
+ */
+const _changeCaseAnyway = (ccFnKey: string, text: string) => {
+    const ccFn = (cc as any)[ccFnKey]
+    // 变量型匹配
+    text = _matchReplace(text, /\w(\w|\d)*/g, (m: any) => {
+        return [ccFn(m[0]), 0]
+    })
+    return text
+}
+
 const _matchReplace = (text: string, reg: RegExp, replacement: (m: any, index: number) => [string, number]) => {
     const textParts: string[] = []
     let startIndex = 0
@@ -88,6 +101,7 @@ const transformer = {
     toObject: _toObject,
     toArray: _toArray,
     changeCase: _changeCase,
+    changeCaseAnyway: _changeCaseAnyway,
     toQrCode: _toQrCode
 }
 

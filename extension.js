@@ -8,6 +8,7 @@ const commandList = [
 	["extension.toObject", () => transformer.toObject()],
 	["extension.toArray", () => transformer.toArray()],
 	["extension.changeCase", () => transformer.changeCase()],
+	["extension.changeCaseAnyway", () => transformer.changeCaseAnyway()],
 	["extension.toQrCode", () => transformer.toQrCode()],
 	["extension.configuration", () => {
 		hx.window.showMessageBox({
