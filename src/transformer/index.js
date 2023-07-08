@@ -225,20 +225,20 @@ const _changeCase = (ccFnKey, text) => {
     const ignoreCommentList = [];
     text = _matchReplace(text, /\s*\/\/.*(\r?\n)?/g, (m) => {
         ignoreCommentList.push(m[0]);
-        return [COMMENT_IGNORE_KEY, 0];
+        return [COMMENT_IGNORE_KEY, m[0].length];
     });
     const ccFn = cc[ccFnKey];
     // 变量型匹配
     text = _matchReplace(text, /(\w(\w|\d)*)\s*=/g, (m) => {
-        return [ccFn(m[1]), 1];
+        return [ccFn(m[1]), m[1].length];
     });
     // 对象键匹配
     text = _matchReplace(text, /(\w(\w|\d)*)\s*:/g, (m) => {
-        return [ccFn(m[1]), 1];
+        return [ccFn(m[1]), m[1].length];
     });
     // 注释恢复
     text = _matchReplace(text, new RegExp(`${COMMENT_IGNORE_KEY}`, "g"), (m, index) => {
-        return [ignoreCommentList[index], 0];
+        return [ignoreCommentList[index], m[0].length];
     });
     return text;
 };
@@ -250,7 +250,7 @@ const _changeCaseAnyway = (ccFnKey, text) => {
     const ccFn = cc[ccFnKey];
     // 变量型匹配
     text = _matchReplace(text, /\w(\w|\d)*/g, (m) => {
-        return [ccFn(m[0]), 0];
+        return [ccFn(m[0]), m[0].length];
     });
     return text;
 };
@@ -264,7 +264,7 @@ const _matchReplace = (text, reg, replacement) => {
             continue;
         const [s, offset] = replacement(m, index);
         textParts.push(text.slice(startIndex, m.index), s);
-        startIndex = m.index + s.length + offset; // 偏移量为全匹配长度
+        startIndex = m.index + offset; // 偏移量为全匹配长度
         index += 1;
     }
     textParts.push(text.slice(startIndex));
