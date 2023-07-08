@@ -1,6 +1,6 @@
 {
 	"id": "noahyoung-hx-data-transformer",
-	"name": "一键变换",
+	"name": "hx-data-transformer",
 	"description": "数据变变变",
 	"displayName": "一键花式变换，详见说明",
 	"version": "0.0.1",
