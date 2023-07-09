@@ -1,9 +1,9 @@
 {
 	"id": "noahyoung-hx-data-transformer",
 	"name": "hx-data-transformer",
-	"description": "数据变变变",
-	"displayName": "一键花式变换，详见说明",
-	"version": "0.0.1",
+	"description": "一键花式变换，详见说明",
+	"displayName": "一键变换",
+	"version": "0.1.1",
 	"publisher": "Noah Young",
 	"engines": {
 		"HBuilderX": "^3.2.22"
