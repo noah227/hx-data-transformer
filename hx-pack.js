@@ -1,22 +1,29 @@
-const executable7ZipPath = '"C:\\Program Files\\7-Zip\\7z.exe"'
-const publishName = "hx-data-transformer.zip"
+const executable7ZipPath = '"D:\\Program Files\\7-Zip\\7z.exe"'
+const publishName = `${require("./package.json").name}.zip`
 // [file, isDir]
 const includes = [
     ["./*.*", false],
     ["./src", true]
 ]
-const excludes = [
-    // 一级目录下不需要的东西
+const excludesBase = [
+    // IDE & Version Control
     [".idea", true],
     [".git", true],
     [".gitignore", false],
-    ["cdnjs-pack.js", false],
+    [".editorconfig", false],
+    // Log files
     ["package-lock.json", false],
-    ["tsconfig.json", false],
+    // Build files
     ["hx-pack.js", false],
+    ["tsconfig.json", false],
     ["rollup.config.*.js", false],
-    ["TODO.md", false],
     ["node_modules", true],
+    // Doc files
+    ["*.md", false],
+]
+const excludes = [
+    ...excludesBase,
+	["*.gif", false],
     ["src/transformer", true],
     ["src/main.js", true],
     [publishName, false]
