@@ -30,6 +30,7 @@
 		"onCommand:extension.changeCaseAnyway",
 		"onCommand:extension.toQrCode",
 		"onCommand:extension.toQrCodeWithGUI",
+		"onCommand:extension.encodeAndDecode",
 		"onCommand:extension.configuration"
 	],
 	"contributes": {
@@ -57,6 +58,10 @@
 			{
 				"command": "extension.toQrCodeWithGUI",
 				"title": "变二维码（GUI）"
+			},
+			{
+				"command": "extension.encodeAndDecode",
+				"title": "编码/解码（URI）"
 			},
 			{
 				"command": "extension.configuration",
@@ -101,8 +106,13 @@
 					"when": "editorHasSelection"
 				},
 				{
-					"command": "extension.configuration",
+					"command": "extension.encodeAndDecode",
 					"group": "transformer@6",
+					"when": "editorHasSelection"
+				},
+				{
+					"command": "extension.configuration",
+					"group": "transformer@7",
 					"when": "editorTextFocus"
 				},
 				{

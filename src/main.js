@@ -164,5 +164,35 @@ module.exports = {
                 console.log("转换到URL失败：", e)
             })
         })
-    }
+    },
+	encodeAndDecode(){
+		const configGroup = [
+			{label: "encodeURI", fn(text){
+				return encodeURI(text)
+			}},
+			{label: "encodeURIComponent", fn(text){
+				return encodeURIComponent(text)
+			}},
+			{label: "decodeURI", fn(text){
+				return decodeURI(text)
+			}},
+			{label: "decodeURIComponent", fn(text){
+				return decodeURIComponent(text)
+			}},
+		]
+		hx.window.showQuickPick(configGroup).then(result => {
+			if(result) {
+				const fn = configGroup.find(item => item.label === result.label)?.fn
+				hx.window.getActiveTextEditor().then(editor => {
+				    const selections = editor.selections
+				    editor.edit(editBuilder => {
+				        selections.forEach(selection => {
+				            let text = editor.document.getText(selection)
+				            editBuilder.replace(selection, fn(text))
+				        })
+				    })
+				})
+			}
+		})
+	}
 }
