@@ -29,6 +29,7 @@
 		"onCommand:extension.changeCase",
 		"onCommand:extension.changeCaseAnyway",
 		"onCommand:extension.toQrCode",
+		"onCommand:extension.toQrCodeWithGUI",
 		"onCommand:extension.configuration"
 	],
 	"contributes": {
@@ -52,6 +53,10 @@
 			{
 				"command": "extension.toQrCode",
 				"title": "变二维码"
+			},
+			{
+				"command": "extension.toQrCodeWithGUI",
+				"title": "变二维码（GUI）"
 			},
 			{
 				"command": "extension.configuration",
@@ -91,8 +96,13 @@
 					"when": "editorHasSelection"
 				},
 				{
-					"command": "extension.configuration",
+					"command": "extension.toQrCodeWithGUI",
 					"group": "transformer@5",
+					"when": "editorHasSelection"
+				},
+				{
+					"command": "extension.configuration",
+					"group": "transformer@6",
 					"when": "editorTextFocus"
 				},
 				{

@@ -10,6 +10,7 @@ const commandList = [
 	["extension.changeCase", () => transformer.changeCase()],
 	["extension.changeCaseAnyway", () => transformer.changeCaseAnyway()],
 	["extension.toQrCode", () => transformer.toQrCode()],
+	["extension.toQrCodeWithGUI", () => transformer.toQrCodeWithGUI()],
 	["extension.configuration", () => {
 		hx.window.showMessageBox({
 			title: "提示",
