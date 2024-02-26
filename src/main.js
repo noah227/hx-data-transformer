@@ -85,9 +85,10 @@ module.exports = {
                 const wd = hx.window.createWebViewDialog({
                     modal: true,
                     title: "二维码预览",
+					description: "二维码模糊时，可以拖动窗口右下角调整窗体大小",
                     // dialogButtons: ["复制URL", "关闭"],
                     dialogButtons: ["关闭"],
-                    size: {width: 360, height: 360}
+                    size: {width: 360, height: 420}
                 }, {enableScripts: false})
 
                 var background = '';
