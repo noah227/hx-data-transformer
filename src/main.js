@@ -195,5 +195,14 @@ module.exports = {
 				})
 			}
 		})
+	},
+	objectJsonfied(){
+		hx.window.getActiveTextEditor().then(editor => {
+		    const selection = editor.selection
+		    const text = editor.document.getText(selection)
+		    editor.edit(editBuilder => {
+		        editBuilder.replace(selection, transformer.objectJsonfied(text))
+		    })
+		})
 	}
 }

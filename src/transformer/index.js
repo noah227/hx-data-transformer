@@ -281,12 +281,16 @@ const _toQrCode = (s) => new Promise((resolve, reject) => {
         resolve(url);
     });
 });
+const _objectJsonfied = (s) => {
+    return s.replaceAll(/(?<!["\w])(\w+)(\s*:)/g, `"$1"$2`);
+};
 const transformer = {
     toObject: _toObject,
     toArray: _toArray,
     changeCase: _changeCase,
     changeCaseAnyway: _changeCaseAnyway,
-    toQrCode: _toQrCode
+    toQrCode: _toQrCode,
+    objectJsonfied: _objectJsonfied
 };
 
 module.exports = transformer;

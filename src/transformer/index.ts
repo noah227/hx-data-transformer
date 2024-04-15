@@ -97,12 +97,17 @@ const _toQrCode = (s: string) => new Promise((resolve, reject) => {
     })
 })
 
+const _objectJsonfied = (s: string) => {
+	return s.replaceAll(/(?<!["\w])(\w+)(\s*:)/g, `"$1"$2`)
+}
+
 const transformer = {
     toObject: _toObject,
     toArray: _toArray,
     changeCase: _changeCase,
     changeCaseAnyway: _changeCaseAnyway,
-    toQrCode: _toQrCode
+    toQrCode: _toQrCode,
+	objectJsonfied: _objectJsonfied
 }
 
 export default transformer

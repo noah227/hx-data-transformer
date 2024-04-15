@@ -31,6 +31,7 @@
 		"onCommand:extension.toQrCode",
 		"onCommand:extension.toQrCodeWithGUI",
 		"onCommand:extension.encodeAndDecode",
+		"onCommand:extension.objectJsonfied",
 		"onCommand:extension.configuration"
 	],
 	"contributes": {
@@ -62,6 +63,10 @@
 			{
 				"command": "extension.encodeAndDecode",
 				"title": "编码/解码（URI）"
+			},
+			{
+				"command": "extension.objectJsonfied",
+				"title": "对象json修正"
 			},
 			{
 				"command": "extension.configuration",
@@ -111,8 +116,13 @@
 					"when": "editorHasSelection"
 				},
 				{
-					"command": "extension.configuration",
+					"command": "extension.objectJsonfied",
 					"group": "transformer@7",
+					"when": "editorHasSelection"
+				},
+				{
+					"command": "extension.configuration",
+					"group": "transformer@8",
 					"when": "editorTextFocus"
 				},
 				{
