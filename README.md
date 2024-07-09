@@ -16,6 +16,16 @@
 
 ## 补充图例
 
+### 编码/解码（URI）
+
+<details>
+
+<summary>点击展开查看用例</summary>
+
+![](README_files/2.gif)
+
+</details>
+
 ### 对象json修正（beta）
 
 > 代码里复制到json时就方便了
