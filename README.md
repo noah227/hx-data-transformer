@@ -22,7 +22,7 @@
 
 <summary>点击展开查看用例</summary>
 
-![](README_files/2.gif)
+![](https://mp-77dc03ae-7084-429e-8b0f-4d540ae4a430.cdn.bspapp.com/images/hx-data-trasformer-encode&decode.gif)
 
 </details>
 
@@ -30,4 +30,4 @@
 
 > 代码里复制到json时就方便了
 
-![](README_files/1.gif)
+![](https://mp-77dc03ae-7084-429e-8b0f-4d540ae4a430.cdn.bspapp.com/images/hx-data-trasformer-json-fix.gif)
