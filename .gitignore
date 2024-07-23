@@ -3,6 +3,7 @@ node_modules
 dist
 *.zip
 *.map
+src/transformer/index.js
 
 main.build.js
 
