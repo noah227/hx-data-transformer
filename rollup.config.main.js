@@ -20,6 +20,7 @@ module.exports = [
             exports: "auto",
             sourcemap: false
         },
+		external: ["clipboard-sys"],
         plugins: [
             ...plugins
         ]

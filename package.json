@@ -146,6 +146,7 @@
 	"dependencies": {
 		"@rollup/plugin-json": "^6.0.0",
 		"change-case": "^4.1.2",
+		"clipboard-sys": "^1.2.1",
 		"copy-paste": "^1.5.3",
 		"qrcode": "^1.5.3"
 	},
