@@ -65,6 +65,10 @@
 				"title": "编码/解码（URI）"
 			},
 			{
+				"command": "extension.reverseLineComment",
+				"title": "注释反转"
+			},
+			{
 				"command": "extension.objectJsonfied",
 				"title": "对象json修正"
 			},
@@ -121,8 +125,13 @@
 					"when": "editorHasSelection"
 				},
 				{
-					"command": "extension.configuration",
+					"command": "extension.reverseLineComment",
 					"group": "transformer@8",
+					"when": "editorHasSelection"
+				},
+				{
+					"command": "extension.configuration",
+					"group": "transformer@9",
 					"when": "editorTextFocus"
 				},
 				{

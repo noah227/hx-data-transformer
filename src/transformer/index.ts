@@ -97,6 +97,14 @@ const _toQrCode = (s: string) => new Promise((resolve, reject) => {
     })
 })
 
+const _reverseLineComment = (line: string) => {
+	const regStartWithComment = /^([\t\s]*)\/\/([\t\s]*)/
+	const regStartWithouComment = /^([\t\s]*)/
+	if(regStartWithComment.test(line)) return line.replace(regStartWithComment, "$1")
+	else if(regStartWithouComment.test(line)) return line.replace(regStartWithouComment, "$1// ")
+	else return line
+}
+
 const _objectJsonfied = (s: string) => {
 	return s.replaceAll(/(?<!["\w])(\w+)(\s*:)/g, `"$1"$2`)
 }
@@ -107,6 +115,7 @@ const transformer = {
     changeCase: _changeCase,
     changeCaseAnyway: _changeCaseAnyway,
     toQrCode: _toQrCode,
+	reverseLineComment: _reverseLineComment,
 	objectJsonfied: _objectJsonfied
 }
 

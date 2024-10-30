@@ -12,6 +12,7 @@ const commandList = [
 	["extension.toQrCode", () => transformer.toQrCode()],
 	["extension.toQrCodeWithGUI", () => transformer.toQrCodeWithGUI()],
 	["extension.encodeAndDecode", () => transformer.encodeAndDecode()],
+	["extension.reverseLineComment", () => transformer.reverseLineComment()],
 	["extension.objectJsonfied", () => transformer.objectJsonfied()],
 	["extension.configuration", () => {
 		hx.window.showMessageBox({

@@ -196,6 +196,19 @@ module.exports = {
 			}
 		})
 	},
+	reverseLineComment(){
+		hx.window.getActiveTextEditor().then(editor => {
+		    const selection = editor.selection
+		    const text = editor.document.getText(selection)
+			
+		    editor.edit(editBuilder => {
+		        editBuilder.replace(
+					selection, 
+					text.split("\n").map(line => transformer.reverseLineComment(line)).join("\n")
+				)
+		    })
+		})
+	},
 	objectJsonfied(){
 		hx.window.getActiveTextEditor().then(editor => {
 		    const selection = editor.selection
