@@ -4,6 +4,7 @@ dist
 *.zip
 *.map
 src/transformer/index.js
+src/transformer/types/
 
 main.build.js
 
