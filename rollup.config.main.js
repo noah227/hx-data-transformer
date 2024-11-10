@@ -20,7 +20,7 @@ module.exports = [
             exports: "auto",
             sourcemap: false
         },
-		external: ["clipboard-sys"],
+		external: ["clipboard-sys", "hbuilderx"],
         plugins: [
             ...plugins
         ]
