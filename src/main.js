@@ -174,18 +174,9 @@ module.exports = {
 				else processFns.writeImage()
 				
 			}).catch(e => {
-				console.log("转换到URL失败：", e)
+				hx.window.setStatusBarMessage("转换二维码失败(可能的原因：文本过长)", 3000, "error")
 			})
 		})
-	    hx.window.getActiveTextEditor().then(editor => {
-	        const text = editor.selections.map(selection => editor.document.getText(selection)).join("\n")
-	        transformer.toQrCode(text).then(url => {
-	            require("copy-paste").copy(url)
-	            hx.window.setStatusBarMessage("已复制二维码地址复制到剪切板", 3000)
-	        }).catch(e => {
-	            hx.window.setStatusBarMessage("文本过长，转换二维码失败", 3000, "error")
-	        })
-	    })
 	},
 	encodeAndDecode(){
 		const configGroup = [
