@@ -101,37 +101,37 @@
                 },
                 {
                     "command": "extension.changeCaseAnyway",
-                    "group": "transformer@3",
-                    "when": "editorHasSelection"
-                },
-                {
-                    "command": "extension.toQrCode",
                     "group": "transformer@4",
                     "when": "editorHasSelection"
                 },
                 {
-                    "command": "extension.toQrCodeWithGUI",
+                    "command": "extension.toQrCode",
                     "group": "transformer@5",
                     "when": "editorHasSelection"
                 },
                 {
-                    "command": "extension.encodeAndDecode",
+                    "command": "extension.toQrCodeWithGUI",
                     "group": "transformer@6",
                     "when": "editorHasSelection"
                 },
                 {
-                    "command": "extension.objectJsonfied",
+                    "command": "extension.encodeAndDecode",
                     "group": "transformer@7",
                     "when": "editorHasSelection"
                 },
                 {
-                    "command": "extension.reverseLineComment",
+                    "command": "extension.objectJsonfied",
                     "group": "transformer@8",
+                    "when": "editorHasSelection"
+                },
+                {
+                    "command": "extension.reverseLineComment",
+                    "group": "transformer@9",
                     "when": "editorHasSelection && langId =~ /javascript|typescript|coffeescript/"
                 },
                 {
                     "command": "extension.configuration",
-                    "group": "transformer@9",
+                    "group": "transformer@10",
                     "when": "editorTextFocus"
                 },
                 {
