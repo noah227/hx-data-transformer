@@ -127,7 +127,7 @@
 				{
 					"command": "extension.reverseLineComment",
 					"group": "transformer@8",
-					"when": "editorHasSelection"
+					"when": "editorHasSelection && langId =~ /javascript|typescript|coffeescript/"
 				},
 				{
 					"command": "extension.configuration",
