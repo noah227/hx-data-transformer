@@ -32,6 +32,7 @@
         "onCommand:extension.toQrCodeWithGUI",
         "onCommand:extension.encodeAndDecode",
         "onCommand:extension.objectJsonfied",
+        "onCommand:extension.reverseLineComment",
         "onCommand:extension.configuration"
     ],
     "contributes": {
