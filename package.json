@@ -35,7 +35,8 @@
         "onCommand:extension.configuration"
     ],
     "contributes": {
-        "commands": [{
+        "commands": [
+            {
                 "command": "extension.toObject",
                 "title": "变对象"
             },
@@ -77,7 +78,8 @@
             }
         ],
         "menus": {
-            "editor/context": [{
+            "editor/context": [
+                {
                     "id": "transformer",
                     "title": "一键变换",
                     "group": "assist"
