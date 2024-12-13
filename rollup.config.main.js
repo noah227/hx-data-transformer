@@ -6,7 +6,7 @@ const json = require("@rollup/plugin-json")
 const plugins = [
     nodeResolve(),
     commonjs(),
-	json(),
+    json(),
     terser()
 ]
 
@@ -20,7 +20,7 @@ module.exports = [
             exports: "auto",
             sourcemap: false
         },
-		external: ["clipboard-sys", "hbuilderx"],
+        external: ["clipboard-sys", "hbuilderx"],
         plugins: [
             ...plugins
         ]

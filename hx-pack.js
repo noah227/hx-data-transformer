@@ -5,9 +5,9 @@ const publishName = `${require("./package.json").name}.zip`
     cozip(publishName, [
         ["./src/main.js", false],
         ["./src/main.build.js", false],
-		["./node_modules/clipboard-sys", true],
-		["./node_modules/execa", true],
-		["./node_modules/fs-extra", true],
+        ["./node_modules/clipboard-sys", true],
+        ["./node_modules/execa", true],
+        ["./node_modules/fs-extra", true],
         ["./extension.js", false],
         ["./package.json", false],
     ], err => {
