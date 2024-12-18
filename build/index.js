@@ -61,6 +61,8 @@ const createContextList = () => {
     }
 }
 
-console.log(createEventList().apply())
-// console.log(createCommandList().apply())
-// console.log(createContextList().apply())
+console.time("update")
+createEventList().apply()
+createCommandList().apply()
+createContextList().apply()
+console.timeEnd("update")

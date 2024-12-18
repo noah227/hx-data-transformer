@@ -13,6 +13,7 @@
     ],
     "main": "./extension",
     "scripts": {
+        "build:update": "node ./build/index.js",
         "build:transformer": "rollup -c rollup.config.transformer.js",
         "build:main": "rollup -c rollup.config.main.js",
         "build": "npm run build:transformer && npm run build:main",
