@@ -1,15 +1,7 @@
 const fs = require("fs")
 const path = require("path")
-const {
-    commandList
-} = require("./core.js")
-
-
-const pkgPath = path.resolve(__dirname, "../package.json")
-const readPkgData = () => JSON.parse(fs.readFileSync(pkgPath, "utf-8"))
-const writePkgData = (data) => {
-    fs.writeFileSync(pkgPath, JSON.stringify(data, null, 4), "utf-8")
-}
+const { pkgPath, readPkgData, writePkgData } = require("./common.js")
+const { commandList } = require("./core.js")
 
 const createEventList = () => {
     const dataList = commandList.map(([command]) => `onCommand:extension.${command}`)
