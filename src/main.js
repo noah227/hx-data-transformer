@@ -176,6 +176,9 @@ module.exports = {
             })
         })
     },
+    toQrCodeWithGUI(){
+        this.toQrCode(true)
+    },
     encodeAndDecode() {
         const configGroup = [
             {
