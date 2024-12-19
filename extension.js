@@ -1,19 +1,14 @@
 var hx = require("hbuilderx");
 // const transformer = require("./src/main.js")
 const transformer = require("./src/main.build.js")
-
+const {commandList: coreCommandList} = require("./build/core.js")
 // [commandId, handler]
 const commandList = [
     // ["extension.transformer", () => {}],
-    ["extension.toObject", () => transformer.toObject()],
-    ["extension.toArray", () => transformer.toArray()],
-    ["extension.changeCase", () => transformer.changeCase()],
-    ["extension.changeCaseAnyway", () => transformer.changeCaseAnyway()],
-    ["extension.toQrCode", () => transformer.toQrCode()],
-    ["extension.toQrCodeWithGUI", () => transformer.toQrCodeWithGUI()],
-    ["extension.encodeAndDecode", () => transformer.encodeAndDecode()],
-    ["extension.objectJsonfied", () => transformer.objectJsonfied()],
-    ["extension.reverseLineComment", () => transformer.reverseLineComment()],
+    ...coreCommandList.map(([cmd]) => [
+        `extension.${cmd}`,
+        () => transformer[cmd]()
+    ]),
     ["extension.configuration", () => {
         hx.window.showMessageBox({
             title: "提示",
