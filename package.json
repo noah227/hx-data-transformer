@@ -34,6 +34,7 @@
         "onCommand:extension.encodeAndDecode",
         "onCommand:extension.objectJsonfied",
         "onCommand:extension.reverseLineComment",
+        "onCommand:extension.reverseLines",
         "onCommand:extension.configuration"
     ],
     "contributes": {
@@ -73,6 +74,10 @@
             {
                 "command": "extension.reverseLineComment",
                 "title": "注释反转"
+            },
+            {
+                "command": "extension.reverseLines",
+                "title": "内容反转"
             },
             {
                 "command": "extension.configuration",
@@ -132,8 +137,13 @@
                     "when": "editorHasSelection && langId =~ /javascript|typescript|coffeescript/"
                 },
                 {
-                    "command": "extension.configuration",
+                    "command": "extension.reverseLines",
                     "group": "transformer@10",
+                    "when": "editorHasSelection"
+                },
+                {
+                    "command": "extension.configuration",
+                    "group": "transformer@11",
                     "when": "editorTextFocus"
                 },
                 {

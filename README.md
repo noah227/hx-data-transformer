@@ -44,3 +44,8 @@
 > 代码里复制到json时就方便了
 
 ![](https://mp-77dc03ae-7084-429e-8b0f-4d540ae4a430.cdn.bspapp.com/images/hx-data-trasformer-json-fix.gif)
+
+### 内容反转
+
+把选择的行内容从上到下反过来
+![](https://mp-77dc03ae-7084-429e-8b0f-4d540ae4a430.cdn.bspapp.com/images/hx-data-transformer/hx-data-transformer--reverse-lines.gif)

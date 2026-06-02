@@ -109,6 +109,13 @@ const _objectJsonfied = (s: string) => {
     return s.replaceAll(/(?<!["\w])(\w+)(\s*:)/g, `"$1"$2`)
 }
 
+/**
+ * 反转选中的行内容
+ */
+const _reverseLines = (lines: string[]) => {
+    return [...lines].reverse()
+}
+
 const transformer = {
     toObject: _toObject,
     toArray: _toArray,
@@ -116,7 +123,8 @@ const transformer = {
     changeCaseAnyway: _changeCaseAnyway,
     toQrCode: _toQrCode,
     reverseLineComment: _reverseLineComment,
-    objectJsonfied: _objectJsonfied
+    objectJsonfied: _objectJsonfied,
+    reverseLines: _reverseLines
 }
 
 export default transformer

@@ -11,6 +11,7 @@ const commandList = [
     ["encodeAndDecode", "编码/解码（URI）", "editorHasSelection"],
     ["objectJsonfied", "对象json修正", "editorHasSelection"],
     ["reverseLineComment", "注释反转", "editorHasSelection && langId =~ /javascript|typescript|coffeescript/"],
+    ["reverseLines", "内容反转", "editorHasSelection"],
     ["configuration", "配置项", "editorTextFocus"],
 ]
 
